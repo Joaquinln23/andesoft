@@ -1,0 +1,51 @@
+/* ============================================================
+   AndeSoft — Proceso
+   Vista: views/process.js
+   ============================================================ */
+
+.process__steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  gap: 0;
+}
+
+.process__steps::before {
+  content: '';
+  position: absolute;
+  top: 36px; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.process__step { text-align: center; padding: 0 20px; }
+
+.process__step-num {
+  width: 72px; height: 72px;
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-mono);
+  font-size: 18px; font-weight: 600;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sección de fondo claro fijo: el texto es oscuro también en modo oscuro del sistema */
+.section--soft .section__title { color: #0F172A; }
+
+.process__step-title {
+  font-weight: 700; font-size: .95rem;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+
+.process__step-desc {
+  font-size: .85rem;
+  color: #374151;
+  line-height: 1.65;
+}

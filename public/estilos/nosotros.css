@@ -1,0 +1,150 @@
+/* ============================================================
+   AndeSoft — Nosotros / Equipo
+   MVC: views/about.js
+   Fondo: assets/fondo-nosotros.webp (mapa del mundo) con overlays.
+   ============================================================ */
+
+#nosotros {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(5,10,22,.92) 0%, rgba(5,10,22,.72) 34%, rgba(5,10,22,.22) 62%, rgba(5,10,22,.04) 88%),
+    linear-gradient(180deg, rgba(5,10,22,1) 0%, rgba(5,10,22,.97) 12%, rgba(5,10,22,.72) 22%, rgba(5,10,22,.35) 30%, rgba(5,10,22,0) 42%, rgba(5,10,22,.1) 72%, rgba(5,10,22,.88) 100%),
+    url('../assets/fondo-nosotros.webp') center / cover no-repeat,
+    #050A16;
+}
+
+#nosotros .container { position: relative; z-index: 1; }
+
+.about__header {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about__header-text { min-width: 0; }
+
+.about__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -.03em;
+  color: #FFFFFF;
+}
+
+.about__lead {
+  margin-top: 24px;
+  max-width: 470px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(226,232,240,.65);
+}
+
+/* ---------- Chips de confianza ---------- */
+.about__chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 32px;
+  margin-top: 36px;
+}
+
+.about__chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0 4px 0;
+}
+
+.about__chip + .about__chip {
+  padding-left: 32px;
+  border-left: 1.5px solid rgba(127,183,255,.35);
+}
+
+.about__chip-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(56,165,255,.45));
+}
+
+.about__chip-icon svg { width: 100%; height: 100%; }
+
+.about__chip-label {
+  font-size: .82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgba(226,232,240,.85);
+  white-space: nowrap;
+}
+
+/* ---------- Foto de la oficina (marco con glow) ---------- */
+.about__photo {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(91,157,255,.55);
+  box-shadow:
+    0 0 0 1px rgba(143,216,255,.12),
+    0 28px 70px rgba(3,8,20,.6),
+    0 0 60px rgba(31,143,255,.28),
+    inset 0 1px 0 rgba(143,216,255,.25);
+}
+
+.about__photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31,143,255,.08) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.about__points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+
+.about-card {
+  padding: 30px 28px;
+}
+
+.about-card__arrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: #8FD0FF;
+  text-shadow: 0 0 14px rgba(59,130,246,.6);
+  margin-bottom: 16px;
+}
+
+.about-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.about-card__desc {
+  font-size: .88rem;
+  color: rgba(226,232,240,.62);
+  line-height: 1.65;
+}

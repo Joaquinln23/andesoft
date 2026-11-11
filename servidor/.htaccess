@@ -1,0 +1,23 @@
+# Apache (requiere mod_headers): copiar a la raíz publicada (public/.htaccess).
+# Si se agrega el endpoint del formulario, añádelo a connect-src.
+Options -Indexes
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-site"
+</IfModule>
+
+# Solo se aceptan GET/HEAD/OPTIONS (el sitio es estático)
+<LimitExcept GET HEAD OPTIONS>
+  Require all denied
+</LimitExcept>
+
+# Nunca servir archivos ocultos (.git, .env, …)
+<FilesMatch "^\.(?!well-known)">
+  Require all denied
+</FilesMatch>

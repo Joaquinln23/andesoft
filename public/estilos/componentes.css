@@ -1,0 +1,95 @@
+/* ============================================================
+   AndeSoft — Componentes compartidos
+   Piezas que se repiten en varias secciones: botones, tarjeta de
+   vidrio, etiqueta de sección, texto con degradado, etiquetas y
+   elementos comunes de los formularios.
+   ============================================================ */
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-weight: 600; font-size: 15px;
+  text-decoration: none;
+  cursor: pointer; border: none;
+  transition: transform .15s, box-shadow .15s, background .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 24px rgba(37,99,235,.35);
+}
+.btn--primary:hover { background: var(--accent-light); box-shadow: 0 6px 32px rgba(37,99,235,.5); }
+
+.btn--submit { align-self: flex-start; }
+.btn:disabled, .quick__submit:disabled { opacity: .6; cursor: progress; transform: none; }
+
+/* ---- Texto con degradado (palabra destacada de los títulos) ---- */
+.text-gradient {
+  background-image: var(--grad-text);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* ---- Tarjeta de vidrio (servicios, nosotros, contacto) ---- */
+.glass-card {
+  border-radius: 18px;
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: var(--glass-shadow);
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(143,216,255,.6);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* ---- Etiqueta de sección con línea (servicios y nosotros) ---- */
+.eyebrow-row { display: flex; align-items: center; gap: 22px; margin-bottom: 26px; }
+
+.eyebrow-pill {
+  display: inline-flex; align-items: center;
+  padding: 8px 22px;
+  border: 1.5px solid rgba(91,157,255,.55);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: #7FB7FF;
+  text-shadow: 0 0 14px rgba(59,130,246,.55);
+  white-space: nowrap;
+}
+
+.eyebrow-line {
+  height: 1.5px;
+  width: min(28vw, 270px);
+  background: linear-gradient(90deg, rgba(127,183,255,.9), rgba(127,183,255,0));
+}
+
+/* ---- Etiquetas (tags) de tecnologías ---- */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: rgba(79,134,247,.12);
+  color: #90B4FF;
+  border: 1px solid rgba(79,134,247,.28);
+}
+
+/* ---- Formularios: piezas comunes ---- */
+.hp-field {                      /* señuelo antirrobots: fuera de pantalla, no display:none */
+  position: absolute; left: -10000px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}
+
+.form-status { margin-top: 12px; font-size: 14px; line-height: 1.45; }
+.form-status:empty { position: absolute; margin: 0; }   /* vacío: no ocupa espacio, pero sigue siendo región activa */
+.form-status[data-state="ok"] { color: #7EE0A8; }
+.form-status[data-state="error"] { color: #FCA5A5; }

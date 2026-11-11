@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07111F">
+
+  <!-- ===== Seguridad =====
+       CSP de respaldo. Si el servidor ya envía los encabezados de servidor/,
+       estos mandan; si algún día se cambia uno, cámbialo también en el otro.
+       Cuando exista el endpoint del formulario, agrégalo a connect-src. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- ===== SEO ===== -->
+  <title>AndeSoft – Desarrollo de Software e Informática para Empresas y Pymes</title>
+  <meta name="description" content="AndeSoft es una empresa de desarrollo de software (C#/.NET, React, IA y Big Data). Aplicaciones a medida y servicios informáticos para pymes y empresas de Chile y el mundo.">
+  <meta name="keywords" content="desarrollador de software Chile, servicios informáticos para empresas, aplicaciones a medida, software para pymes, C# .NET, React, inteligencia artificial, big data, consultoría TI, desarrollo web, automatización">
+  <meta name="author" content="AndeSoft">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.andesoft.cl/">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.andesoft.cl/">
+  <meta property="og:title" content="AndeSoft – Desarrollo de Software e Informática para Empresas y Pymes">
+  <meta property="og:description" content="AndeSoft es una empresa de desarrollo de software (C#/.NET, React, IA y Big Data). Aplicaciones a medida y servicios informáticos para pymes y empresas de Chile y el mundo.">
+  <meta property="og:image" content="https://www.andesoft.cl/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo de AndeSoft sobre fondo tecnológico">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="AndeSoft">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AndeSoft – Desarrollo de Software e Informática para Empresas y Pymes">
+  <meta name="twitter:description" content="AndeSoft es una empresa de desarrollo de software (C#/.NET, React, IA y Big Data). Aplicaciones a medida y servicios informáticos para pymes y empresas de Chile y el mundo.">
+  <meta name="twitter:image" content="https://www.andesoft.cl/assets/og-image.jpg">
+
+  <!-- Datos estructurados (JSON-LD). No es código ejecutable: el CSP no lo bloquea. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://www.andesoft.cl/#organization",
+    "name": "AndeSoft",
+    "url": "https://www.andesoft.cl",
+    "description": "Empresa de desarrollo de software y servicios informáticos para pymes y empresas de Chile y el mundo: aplicaciones a medida, IA, Big Data y automatización.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
+    "areaServed": ["CL", "Worldwide"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios informáticos y aplicaciones",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones web y de escritorio a medida" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones móviles y multiplataforma" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soluciones con IA y Big Data" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soporte y consultoría informática para empresas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización e integraciones" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud, bases de datos y DevOps" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ===== Tipografías (solo los pesos que se usan) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+
+  <!-- Imagen principal (la más importante para la velocidad percibida) -->
+  <link rel="preload" as="image" href="assets/hero-bg.webp" fetchpriority="high">
+
+  <!-- ===== Estilos (orden = orden de la cascada) ===== -->
+  <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/componentes.css">
+  <link rel="stylesheet" href="estilos/navegacion.css">
+  <link rel="stylesheet" href="estilos/hero.css">
+  <link rel="stylesheet" href="estilos/secciones.css">
+  <link rel="stylesheet" href="estilos/servicios.css">
+  <link rel="stylesheet" href="estilos/nosotros.css">
+  <link rel="stylesheet" href="estilos/proceso.css">
+  <link rel="stylesheet" href="estilos/stack.css">
+  <link rel="stylesheet" href="estilos/faq.css">
+  <link rel="stylesheet" href="estilos/contacto.css">
+  <link rel="stylesheet" href="estilos/footer.css">
+  <link rel="stylesheet" href="estilos/responsive.css">
+  <link rel="stylesheet" href="estilos/animaciones.css">
+
+  <!-- ===== Scripts (defer: se ejecutan en orden cuando el HTML está listo) =====
+       Orden: núcleo → datos → servicios → vistas → comportamientos → arranque. -->
+  <script defer src="assets/js/core/namespace.js"></script>
+  <script defer src="assets/js/core/utils.js"></script>
+  <script defer src="assets/js/core/icons.js"></script>
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/models/site.js"></script>
+  <script defer src="assets/js/services/contact.js"></script>
+  <script defer src="assets/js/views/shared.js"></script>
+  <script defer src="assets/js/views/nav.js"></script>
+  <script defer src="assets/js/views/hero.js"></script>
+  <script defer src="assets/js/views/services.js"></script>
+  <script defer src="assets/js/views/about.js"></script>
+  <script defer src="assets/js/views/process.js"></script>
+  <script defer src="assets/js/views/stack.js"></script>
+  <script defer src="assets/js/views/faq.js"></script>
+  <script defer src="assets/js/views/contact.js"></script>
+  <script defer src="assets/js/views/footer.js"></script>
+  <script defer src="assets/js/behaviors/nav.js"></script>
+  <script defer src="assets/js/behaviors/reveal.js"></script>
+  <script defer src="assets/js/behaviors/marquee.js"></script>
+  <script defer src="assets/js/behaviors/serviceLinks.js"></script>
+  <script defer src="assets/js/behaviors/forms.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Aquí main.js dibuja la página completa a partir de models/site.js -->
+  <div id="app"></div>
+
+  <noscript>
+    <p class="noscript">AndeSoft — desarrollo de software y servicios informáticos para empresas y pymes de Chile y el mundo. Para ver este sitio activa JavaScript en tu navegador.</p>
+  </noscript>
+</body>
+</html>
